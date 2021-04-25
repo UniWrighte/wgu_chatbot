@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<topic name="help me choose">
+	    <category>
+	        <pattern>question1</pattern>
+	        <template>
+	            Which item do you think is most interesting:
+	            <button>WiFi Router</button>
+	            <button>Server</button>
+	            <button>Mobile Phone</button>
+	            <button>Laptop</button>
+	        </template>
+	    </category>
+	    <category>
+	        <pattern>WiFi Router</pattern>
+	        <template>
+	            <think>
+	                <set name="topic">start</set>
+	            </think>
+	            <random>
+	                <li><srai>Information Security</srai></li>
+	                <li><srai>Network Administration</srai></li>
+	            </random>
+	        </template>
+	    </category>
+	    <category>
+	        <pattern>Server</pattern>
+	        <template>
+	            <think>
+	                <set name="topic">start</set>
+	            </think>
+	            <random>
+	                <li><srai>Software Engineering</srai></li>
+	                <li><srai>DevOps Engineering</srai></li>
+	                <li><srai>Information Security</srai></li>
+	            </random>
+	        </template>
+	    </category>
+	    <category>
+	        <pattern>Mobile Phone</pattern>
+	        <template>
+	            <think>
+	                <set name="topic">start</set>
+	            </think>
+	            <random>
+	                <li><srai>Help Desk Services</srai></li>
+	            </random>
+	        </template>
+	    </category>
+	    <category>
+	        <pattern>Laptop</pattern>
+	        <template>
+	            <think>
+	                <set name="topic">start</set>
+	            </think>
+	            <random>
+	                <li><srai>Software Engineering</srai></li>
+	                <li><srai>Help Desk Services</srai></li>
+	            </random>
+	        </template>
+	    </category>
+	</topic>
+</aiml>

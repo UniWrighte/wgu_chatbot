@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>I didn't quite get that. Let's get started. <srai>hi</srai></template>
+  </category>
+  <category>
+      <pattern>what _</pattern>
+      <template>Hi! This is WGU CompSci Career bot. I'm here to help you 
+      investigate career options in computer science. <srai>start</srai></template>
+  </category>
+    <category>
+      <pattern>who _</pattern>
+      <template><srai>what who</srai></template>
+  </category>
+  <category>
+      <pattern>hi</pattern>
+      <template>Hello! <srai>start</srai></template>
+  </category>
+  <category>
+      <pattern>exclaim</pattern>
+      <template>
+          <random>
+              <li>Cool!</li>
+              <li>Interesting!</li>
+              <li>You're braver than me!</li>
+              <li>Great!</li>
+          </random>
+      </template>
+  </category>
+</aiml>

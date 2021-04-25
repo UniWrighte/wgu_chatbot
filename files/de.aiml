@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->\
+	<topic name="DevOps Engineering">
+	    <category>
+	        <pattern>question1</pattern>
+	        <template>Do you like it when people depend on you?</template>
+	    </category>
+	    <category>
+	        <that>Do you like it when people depend on you</that>
+	        <pattern>yes</pattern>
+	        <template><srai>exclaim</srai> <srai>question2</srai></template>
+	    </category>
+	    <category>
+	        <that>Do you like it when people depend on you</that>
+	        <pattern>no</pattern>
+	        <template>
+    	        <srai>reset <get name="topic" /></srai>
+    	    </template>
+	    </category>
+        <category>
+            <pattern>question2</pattern>
+            <template>Do you like conceptual and high level thought but also doing detailed or menial tasks?</template>
+        </category>
+        <category>
+            <that>Do you like conceptual and high level thought but also doing detailed or menial tasks</that>
+            <pattern>yes</pattern>
+            <template><think><set name="help">true</set></think><srai>done <get name="topic" /></srai></template>
+        </category>
+        <category>
+            <that>Do you like conceptual and high level thought but also doing detailed or menial tasks</that>
+            <pattern>no</pattern>
+            <template>
+    	        <srai>reset <get name="topic" /></srai>
+    	    </template>
+        </category>
+	</topic>
+</aiml>

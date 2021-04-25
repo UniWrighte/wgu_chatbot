@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->\
+	<topic name="Network Administration">
+	    <category>
+	        <pattern>question1</pattern>
+	        <template>Do you like setting up and managing WiFi or home routers?</template>
+	    </category>
+	    <category>
+	        <that>Do you like setting up and managing WiFi or home routers</that>
+	        <pattern>yes</pattern>
+	        <template><srai>exclaim</srai> <srai>question2</srai></template>
+	    </category>
+	    <category>
+	        <that>Do you like setting up and managing WiFi or home routers</that>
+	        <pattern>no</pattern>
+	        <template>
+    	        <srai>reset <get name="topic" /></srai>
+    	    </template>
+	    </category>
+        <category>
+            <pattern>question2</pattern>
+            <template>Do you enjoy using spreadsheets and filling out online forms?</template>
+        </category>
+        <category>
+            <that>Do you enjoy using spreadsheets and filling out online forms</that>
+            <pattern>yes</pattern>
+            <template><think><set name="help">true</set></think><srai>done <get name="topic" /></srai></template>
+        </category>
+        <category>
+            <that>Do you enjoy using spreadsheets and filling out online forms</that>
+            <pattern>no</pattern>
+            <template>
+    	        <srai>reset <get name="topic" /></srai>
+    	    </template>
+        </category>
+	</topic>
+</aiml>

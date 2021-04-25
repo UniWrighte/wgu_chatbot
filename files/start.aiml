@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+	    <pattern>start</pattern>
+	    <template>
+	        <think>
+	            <set name="topic">start</set>
+	        </think>
+	        Please choose one:
+	        <button>Software Engineering</button>
+	        <button>Network Administration</button>
+	        <button>Help Desk Services</button>
+	        <button>DevOps Engineering</button>
+	        <button>Information Security</button>
+	        <button>help me choose</button>
+	    </template>
+	</category>
+	<category>
+	    <pattern>end *</pattern>
+	    <template>Thanks for your interest in <star />. Feel free to come back 
+	    for info on other career paths. </template>
+	</category>
+	<category>
+	    <pattern>reset *</pattern>
+	    <template>
+	        <think><set name="topic" /></think>
+	        It looks like <star /> might not be a good fit. 
+	        Let's try another. 
+	        <srai>start</srai>
+	    </template>
+	</category>
+	<category>
+	    <pattern>done *</pattern>
+	    <template>
+	        <think><set name="topic" /></think>
+	        <star /> might be right for you! Would you like to explore more options?
+	        <button>
+	            <text>Yes</text>
+	            <postback>start</postback>
+	        </button>
+	        <button>
+	            <text>No</text>
+	            <postback>end <star /></postback>
+	        </button>
+	    </template>
+	</category>
+	<topic name="start">
+    	<category>
+    	    <pattern>*</pattern>
+    	    <template>
+    	        <think>
+    	            <set name="topic"><star /></set>
+    	            
+    	        </think>
+    	        <srai>question1</srai>
+    	    </template>
+    	</category>
+	</topic>
+</aiml>

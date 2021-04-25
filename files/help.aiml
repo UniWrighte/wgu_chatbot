@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->\
+	<topic name="Help Desk Services">
+	    <category>
+	        <pattern>question1</pattern>
+	        <template>Do you like interacting with people most of your day?</template>
+	    </category>
+	    <category>
+	        <that>Do you like interacting with people most of your day</that>
+	        <pattern>yes</pattern>
+	        <template><srai>exclaim</srai> <srai>question2</srai></template>
+	    </category>
+	    <category>
+	        <that>Do you like interacting with people most of your day</that>
+	        <pattern>no</pattern>
+	        <template>
+    	        <srai>reset <get name="topic" /></srai>
+    	    </template>
+	    </category>
+        <category>
+            <pattern>question2</pattern>
+            <template>Do you enjoy public speaking?</template>
+        </category>
+        <category>
+            <that>Do you enjoy public speaking</that>
+            <pattern>yes</pattern>
+            <template><think><set name="help">true</set></think><srai>done <get name="topic" /></srai></template>
+        </category>
+        <category>
+            <that>Do you enjoy public speaking</that>
+            <pattern>no</pattern>
+            <template>
+    	        <srai>reset <get name="topic" /></srai>
+    	    </template>
+        </category>
+	</topic>
+</aiml>
